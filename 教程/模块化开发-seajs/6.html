@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        //这个就像是seajs中为我们定义好的一个空对象
+        //var exports = {};
+
+        var module = {
+            exports : {}
+        }
+
+        function define(factory) {
+            factory(module.exports, module);
+        }
+
+
+
+
+        //我们使用
+
+        define(function(ex, md) {
+            //console.log(ex);
+
+            var a = 100;
+
+            //ex.a = a; //在原有的地址上增加一个新的数据
+
+
+            //ex = new Object();    //创建一个新的对象并把这个新的对象的地址赋值给了ex，这个时候，ex和exports上的地址并不一样
+            /*ex = {
+                a: a
+            }*/
+
+            md.exports = {
+                a : a
+            }
+
+        });
+
+        console.log(module.exports);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

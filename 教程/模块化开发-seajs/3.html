@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="seajs-3.0.0/dist/sea.js"></script>
+    <script>
+
+        /**
+         * 通过seajs下的use方法来实现文件的加载
+         *  如果我们加载的文件（模块）的后缀是.js的，可以省略
+         *
+         *  第一个参数[字符串/数组]：要加载的模块（或模块列表）
+         *  第二个参数[函数]：当第一个参数的模块或模块列表加载完成以后指定的回调函数
+         */
+        //seajs.use('./js2/a.js');
+        /*seajs.use('./js2/a', function() {
+            //console.log(1);
+            //console.log(a);
+        });*/
+
+        seajs.use(['./js2/a', './js2/b'], function() {
+            //console.log(1);
+            console.log(a);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
